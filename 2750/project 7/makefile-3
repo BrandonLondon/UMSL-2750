@@ -1,0 +1,14 @@
+C	= gcc
+CFLAGS	= -g
+TARGET	= catwrapper
+OBJS	= catwrapper.o
+
+$(TARGET): $(OBJS)
+	$(CC) -o $(TARGET) $(OBJS)
+
+catwrapper.o: catwrapper.c
+	$(CC) $(CFLAGS) -c catwrapper.c
+
+.PHONY: clean
+clean:
+	/bin/rm -f *.o $(TARGET)

@@ -1,0 +1,14 @@
+C	= gcc
+CFLAGS	= -g
+TARGET	= tokener
+OBJS	= tokener.o
+
+$(TARGET): $(OBJS)
+	$(CC) -o $(TARGET) $(OBJS)
+
+tokener.o: tokener.c
+	$(CC) $(CFLAGS) -c tokener.c
+
+.PHONY: clean
+clean:
+	/bin/rm -f *.o $(TARGET)
